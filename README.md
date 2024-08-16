@@ -1,3 +1,3 @@
 # controle-financeiro
 
-Sistema de controle e organização financeira
+Sistema de controle e organização financeiro
