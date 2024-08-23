@@ -4,32 +4,43 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
 
+@RestController
+@RequestMapping("/api/exercicio")
 public class exercicio {
-    @GetMapping
-    public String HelloWorldld() {
+
+    @GetMapping()
+    public String HelloWorld() {
         return "Hello";
     }
 
-    // @PathVariable = anotação para definir quew a variavel
-    // tipo String sera recebida pelo parametro (Nome)
-    // WEB - (colocar localhost)
+    @GetMapping("/hello1")
+    public String HelloWorld1() {
+        return "Hello1";
+    }
 
+    // @PathVariable = anotacao para definir que a variavel nome que é do tipo
+    // String será recebida pelo
+    // parametro {nome}
     @GetMapping("/reverter-nome/{nome}")
-    public String reverternome(@PathVariable String nome) {
+    String reverterNome(@PathVariable String nome) {
         return new StringBuilder(nome).reverse().toString();
     }
-    // WEB -localhost par impar
 
+    /// api/exercicios1/2/par-ou-impar => @GetMapping("/{numero}/par-ou-impar")
+    /// api/exercicios1/par-ou-impar/2 => @GetMapping("/par-ou-impar/{numero}")
     @GetMapping("/par-ou-impar/{numero}")
-    public String verificarParOuImpar(@PathVariable Integer numero) {
+    String verificarParOuImpar(@PathVariable Integer numero) {
         if (numero % 2 == 0) {
             return "Par";
-
         } else {
             return "Ímpar";
         }
+    }
+
+    @GetMapping("/contar-letras/{texto}")
+    public int contarLetras(@PathVariable String texto) {
+        return texto.replaceAll("\\s+", "").length();
     }
 
 }
