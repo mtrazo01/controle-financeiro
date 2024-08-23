@@ -1,4 +1,4 @@
-package Controler;
+package com.fatec.controle_financeiro.Controler;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/exercicio")
+@RequestMapping("api/exercicio")
 public class exercicio {
 
     @GetMapping()
@@ -42,5 +42,6 @@ public class exercicio {
     public int contarLetras(@PathVariable String texto) {
         return texto.replaceAll("\\s+", "").length();
     }
+    @GetMapping("idade-com-parametro")
 
 }
