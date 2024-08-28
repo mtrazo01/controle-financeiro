@@ -42,6 +42,5 @@ public class exercicio {
     public int contarLetras(@PathVariable String texto) {
         return texto.replaceAll("\\s+", "").length();
     }
-    @GetMapping("idade-com-parametro")
 
 }
