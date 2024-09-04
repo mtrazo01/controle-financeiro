@@ -1,3 +1,1 @@
-# controle-financeiro
-
-Sistema de controle e organização financeiro
+# controle-financeiro-projeto
